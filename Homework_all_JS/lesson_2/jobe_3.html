@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо попросить пользователя ввести два числа в переменные `a` и `b`.
+Необходимо вывести в консоль один результат из следующих проверок:
+1. Если оба числа в переменных `a` и `b` положительные, вывести разность
+чисел `a` и `b`, а именно, вычесть из переменной `a` значение переменной `b`.
+2. Если оба числа в переменных `a` и `b` отрицательные, вывести произведение
+чисел `a` и `b`.
+3. Если числа в переменных `a` и `b` разных знаков, вывести сумму чисел
+`a` и `b`.
+В остальных случаях программа не должна ничего выводить.
+-->
+<input type="text" class="input_a-1">
+<div>input_type_int_a</div>
+<input type="text" class="input_b-2">
+<div>input_type_int_b</div>
+<button>Synchronize</button>
+
+<script>
+  "use strict";
+
+  document.querySelector('button').onclick = main;
+
+  function main() {
+    let a = document.querySelector(".input_a-1").value;
+    let b = document.querySelector(".input_b-2").value;
+    let q = branching(a, b)
+    console.log(q)
+  }
+
+  function branching (num_1, num_2) {
+    if (num_1 > 0 && num_2 > 0) {
+      return num_1 - num_2
+    }
+    else if (num_1 < 0 && num_2 < 0) {
+    return num_2 + num_1
+    }
+    else if (num_1 >= 0 || num_2 >= 0 || num_1 < 0 || num_2 < 0) {
+      return console.log(num_1, num_2)
+    }
+    }
+
+  main()
+
+</script>
+</body>
+</html>
