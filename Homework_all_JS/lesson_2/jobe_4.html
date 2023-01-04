@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо реализовать четыре функции, каждая функция должна принимать по два
+числа и выполнять одну из операций (каждая функция выполняет одну из них):
+1. Сложение
+2. Разность
+3. Умножение
+4. Деление
+
+Необходимо сделать так, чтобы функция вернула число, например выражение
+`console.log(sum(2, 6));` должно вывести число 8 в консоль (sum - функция
+сложения в данном примере, ваши названия функций могут отличаться).
+
+Округлять значения, которые возвращают функции не нужно, однако, обратите
+внимание на разность, функция должна вычесть из большего числа меньшее, либо
+вернуть 0, если числа равны.
+
+Функциям всегда передаются корректные числа, проверки на NaN, Infinity делать
+не нужно.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<input type="text" class="input_a-1">
+<div>input_type_int_a</div>
+<input type="text" class="input_b-2">
+<div>input_type_int_b</div>
+<button>Synchronize</button>
+<script>
+  "use strict";
+
+  document.querySelector('button').onclick = main;
+  function main() {
+    let a = document.querySelector(".input_a-1").value;
+    let b = document.querySelector(".input_b-2").value;
+
+    let diff = difference(a, b)
+    let multi = multiplication(a, b)
+    let divis = division(a, b)
+    let addit = addition(a, b)
+
+    console.log('сложение', addit)
+    console.log('разность', diff)
+    console.log('умножение', multi)
+    console.log('деление', divis)
+  }
+
+  function addition(num_1, num_2) {
+      return +num_1 + +num_2
+  }
+
+  function difference(num_1, num_2) {
+    if (num_1 > 0 && num_2 > 0) {
+      let a = num_1 - num_2
+      if (a > 0) {return a}}
+    else
+      return console.log('значение меньше нуля')
+    
+  }
+
+  function multiplication(num_1, num_2) {
+    if (num_1 > 0 && num_2 > 0)
+    return num_1 * num_2
+  }
+  
+  function division(num_1, num_2) {
+    if (num_1 > 0 && num_2 > 0) {
+      let s = num_1 / num_2
+      if (s > 0)
+        return s
+    }
+    else
+      return  console.log('значение меньше нуля')
+  }
+
+
+
+
+  main()
+
+</script>
+</body>
+</html>
